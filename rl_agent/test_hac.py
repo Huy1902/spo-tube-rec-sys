@@ -15,6 +15,7 @@ from rl_agent.utils import set_random_seed
 path_to_data = os.path.join(os.getcwd(), "dataset/mdp/")
 path_to_output = os.path.join(os.getcwd(), "output/mdp/")
 # print(path_to_data, path_to_output)
+os.environ["WANDB_LOGIN"] = "c2aabf528c3a17ca15b2306fdef1f0f0d24798bf"
 wandb.login(key =os.getenv("WANDB_LOGIN"))
 cuda = 0
 if cuda >= 0 and torch.cuda.is_available():
@@ -123,5 +124,5 @@ for seed in [7]:
 
     agent = HAC(facade, params)
 
-    agent.train()
+    agent.test()
     wandb.finish()

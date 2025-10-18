@@ -21,7 +21,7 @@ class OneStageFacade:
         self.n_item = self.env.action_space['item_id'][1]
 
         # (N)
-        self.candidate_iids = np.arange(1, self.n_item + 1)
+        self.candidate_iids = np.arange(0, self.n_item)
 
         # (N, item_dim)
         self.candidate_features = torch.FloatTensor(
