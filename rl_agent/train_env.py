@@ -2,7 +2,7 @@ import torch
 import os
 import numpy as np
 import pandas as pd
-from utils import set_random_seed, wrap_batch
+from rl_agent.utils import set_random_seed, wrap_batch
 from reader.MDPDataReader import MDPDataReader
 from model.MDPUserRespond import MDPUserResponse
 from torch.utils.data import DataLoader
@@ -26,7 +26,7 @@ print(device)
 
 item_info = np.load(os.path.join(path_to_data, "item_info.npy"))
 item_ids = np.load(os.path.join(path_to_data, "item_ids.npy"))
-train = pd.read_csv(os.path.join(path_to_data, "train.csv"), sep="@")
+train = pd.read_csv(os.path.join(path_to_data, "all.csv"), sep="@")
 test = pd.read_csv(os.path.join(path_to_data, "test.csv"), sep="@")
 
 params = dict()
@@ -49,7 +49,7 @@ params['seed'] = 26
 params['epoch'] = 1
 params['dropout_rate'] = 0.2
 params['model_path'] = os.path.join(path_to_output,
-                          f"env/mdp_user_env_lr{params['lr']}_reg{params['l2_coef']}_2.model")
+                          f"env/mdp_user_env_lr{params['lr']}_reg{params['l2_coef']}_eval.model")
 set_random_seed(params['seed'])
 
 # @title Train user response

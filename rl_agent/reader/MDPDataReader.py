@@ -75,7 +75,7 @@ class MDPDataReader(BaseDataReader):
         '''
         stats = super().get_statistics()
         stats['length'] = len(self.data[self.phase])
-        stats['n_item'] = len(self.item_meta) - 1
+        stats['n_item'] = len(self.item_meta)
         stats['item_vec_size'] = self.item_vec_size
         # stats['user_portrait_len'] = self.user_vec_size
         stats['max_seq_len'] = self.max_seq_len

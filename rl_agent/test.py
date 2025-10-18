@@ -27,7 +27,6 @@ else:
 print(device)
 
 item_info = np.load(os.path.join(path_to_data, "item_info.npy"))
-# user_info = np.load(os.path.join(path_to_data, "user_info.npy"))
 item_ids = np.load(os.path.join(path_to_data, "item_ids.npy"))
 train = pd.read_csv(os.path.join(path_to_data, "train.csv"), sep="@")
 test = pd.read_csv(os.path.join(path_to_data, "test.csv"), sep="@")

@@ -25,15 +25,13 @@ else:
     device = "cpu"
 item_info = np.load(os.path.join(path_to_data, "item_info.npy"))
 item_ids = np.load(os.path.join(path_to_data, "item_ids.npy"))
-train = pd.read_csv(os.path.join(path_to_data, "train.csv"), sep="@")
 test = pd.read_csv(os.path.join(path_to_data, "test.csv"), sep="@")
 
 params = dict()
 
-params['train'] = train
+params['train'] = test
 params['val'] = test
 params['item_meta'] = item_info
-# params['user_meta'] = user_info
 params['item_ids'] = item_ids
 
 params['n_worker'] = 4
@@ -51,7 +49,7 @@ params['seed'] = 26
 params['epoch'] = 2
 params['dropout_rate'] = 0.2
 params['model_path'] = os.path.join(path_to_output,
-                          f"env/mdp_user_env_lr{params['lr']}_reg{params['l2_coef']}.model")
+                          f"env/mdp_user_env_lr{params['lr']}_reg{params['l2_coef']}_eval.model")
 
 params['dropout_rate'] = 0.2
 params['max_step'] = 20
