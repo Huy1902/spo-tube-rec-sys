@@ -98,7 +98,7 @@ config.pop("item_meta", None)
 config.pop("item_ids", None)
 # config.pop("user_meta", None)
 
-for seed in [7]:
+for seed in [7, 11, 19, 26]:
     params['seed'] = seed
     set_random_seed(params['seed'])
     params['save_path'] = os.path.join(path_to_output, f"agent/mdp_model_seed{params['seed']}")

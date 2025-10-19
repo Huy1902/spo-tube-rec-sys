@@ -89,7 +89,7 @@ class BaseAgent:
                     t_ = time()
                     episode_report = self.facade.get_episode_report(10)
                     log_str = f"step: {i} @ episode report: {episode_report}\n"
-                    # wandb.log(episode_report)
+                    wandb.log(episode_report)
                     with open(self.save_path + "_eval.report", 'a') as outfile:
                         outfile.write(log_str)
                     # print(f"Episode step {i}, time diff {t_ - t}, total time dif {t - start_time})")
